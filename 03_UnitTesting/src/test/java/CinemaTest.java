@@ -18,7 +18,13 @@ public class CinemaTest {
 
     @Test
     public void shouldNotBeAbleToBuyCinemaTicketWhenYoungerThanRestriction() {
-        fail("not implemented");
+        int age = 11;
+        Customer customer = new Customer(age);
+        Movie movie = new Movie("Frozen",12);
+        Cinema cinema = new Cinema();
+        boolean canGetTicket = cinema.canBuyTicket(movie, customer);
+        assertFalse(canGetTicket);
+//        fail("not implemented");
     }
 
     @Test

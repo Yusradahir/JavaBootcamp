@@ -9,10 +9,12 @@ public class Movie {
     }
 
     public int getAgeRestriction() {
+
         return ageRestriction;
     }
 
     public String getTitle() {
+
         return title;
     }
 }

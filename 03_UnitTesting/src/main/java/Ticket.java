@@ -1,4 +1,5 @@
 public class Ticket {
+
     private final String title;
     private final int seat;
 
@@ -8,10 +9,12 @@ public class Ticket {
     }
 
     public String getTitle() {
+
         return title;
     }
 
     public int getSeat() {
+
         return seat;
     }
 }
