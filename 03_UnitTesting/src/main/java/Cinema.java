@@ -1,7 +1,12 @@
 public class Cinema {
+
     public boolean canBuyTicket(Movie movie, Customer customer){
 
-        return false;
+        if(customer.getAge() >= movie.getAgeRestriction()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public Ticket orderTicket(Movie movie, Customer customer, int seat) {

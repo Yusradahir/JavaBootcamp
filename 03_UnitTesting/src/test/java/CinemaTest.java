@@ -27,10 +27,21 @@ public class CinemaTest {
 //        fail("not implemented");
     }
 
-    @Test
-    public void shouldThrowExceptionWhenTryOrderTicketAndYoungerThanAgeRestriction() {
-        fail("not implemented");
+    @Test(expected = Exception.class)
+    public void shouldThrowExceptionWhenTryOrderTicketAndYoungerThanAgeRestriction()  {
+        try{
+            int age = 10;
+            Customer customer = new Customer(age);
+            Movie movie = new Movie("Frozen",12);
+            Cinema cinema = new Cinema();
+            boolean canGetTicket = cinema.canBuyTicket(movie, customer);
+            assertTrue(canGetTicket);
+        }catch(Exception e){
+            throw e;
+        }
+        
     }
+
 
     @Test
     public void shouldGetTicketForTheRightSeatAndMovie() {
@@ -45,5 +56,6 @@ public class CinemaTest {
         Ticket ticket = cinema.orderTicket(movie, customer, seat);
         //then
         assertEquals(new Ticket(title, seat), ticket);
+//        assertSame(new Ticket(title, seat), ticket);
     }
 }
