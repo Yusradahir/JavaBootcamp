@@ -39,7 +39,7 @@ public class CinemaTest {
         }catch(Exception e){
             throw e;
         }
-        
+
     }
 
 
