@@ -6,9 +6,11 @@ import java.io.InputStream;
 import java.util.List;
 
 public abstract class WordReader {
+
     public final InputStream inStream;
 
     public WordReader(final InputStream inStream) {
+
         this.inStream = inStream;
     }
 
