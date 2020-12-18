@@ -15,7 +15,6 @@ public class PersonLocator {
     }
 
 
-
     public Optional<Location> find(final Person person) {
        for(int i =0; i<people.length; i++){
            for(int j = 0; j < people.length; j++){
