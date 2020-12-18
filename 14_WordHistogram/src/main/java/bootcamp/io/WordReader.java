@@ -15,4 +15,7 @@ public abstract class WordReader {
     }
 
     public abstract Result<List<String>> getWords();
+
+
+
 }
