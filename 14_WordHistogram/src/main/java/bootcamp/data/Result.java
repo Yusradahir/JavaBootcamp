@@ -19,7 +19,7 @@ public class Result<T> {
         this.value = value;
 
     }
-    
+
     //2. With status and message. value set to empty optional. Status and message set to corresponding arguments.
 
     public Result(Status status, String message){
