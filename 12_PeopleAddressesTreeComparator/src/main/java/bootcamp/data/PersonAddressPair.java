@@ -10,10 +10,12 @@ public class PersonAddressPair {
     }
 
     public Person getPerson() {
+
         return this.person;
     }
 
     public Address getAddress() {
+
         return this.address;
     }
 }

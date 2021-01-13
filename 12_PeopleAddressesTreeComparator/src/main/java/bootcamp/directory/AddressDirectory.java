@@ -9,23 +9,39 @@ import java.util.*;
 public class AddressDirectory {
     private final Map<Person, Address> directory;
 
+
     public AddressDirectory(final List<PersonAddressPair> addressList) {
         directory = new TreeMap<>(new Comparator<Person>() {
-            //FIXME
+
+            @Override
+            public int compare(Person person, Person t1) {
+                if(person.getFirstName()==t1.getFirstName()){
+                    return 0;
+                }else{
+                    return -1;
+                }
+            }
+
         });
-        //TODO convert addressList to a TreeMap assigned to directory.
-    }
+
+        for(PersonAddressPair p: addressList){
+            directory.put(p.getPerson(),p.getAddress());
+
+        }    }
 
     public Optional<Address> getAddress(final Person person) {
-        //FIXME
-        return null;
+
+        if(this.directory.containsKey(person)){
+            return Optional.of(this.directory.get(person));
+        }
+
+        return Optional.empty();
     }
 
     public void updateAddress(final PersonAddressPair personAddress) {
-        //FIXME
-    }
+        directory.put(personAddress.getPerson(),personAddress.getAddress());    }
 
     public void remove(final Person person) {
-        //FIXME
+        directory.remove(person);
     }
 }
