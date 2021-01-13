@@ -1,11 +1,61 @@
 package bootcamp.data;
 
 public class Address {
-    private final String firstLine = null; //FIXME
-    private final String secondLine = null; //FIXME
-    private final String postCode = null; //FIXME
-    private final String city = null; //FIXME
+    private final String firstLine;
+    private final String secondLine ;
+    private final String postCode ;
+    private final String city ;
 
-    //TODO Constructor.
-    //TODO getters.
+    public Address(String firstLine,String secondLine,String postCode,String city) {
+        this.firstLine = firstLine;
+        this.secondLine = secondLine;
+        this.postCode = postCode;
+        this.city = city;
+    }
+
+    public String getFirstLine() {
+        return firstLine;
+    }
+
+    public String getSecondLine() {
+        return secondLine;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + firstLine.hashCode();
+        result = 31 * result + secondLine.hashCode();
+        result = 31 * result + postCode.hashCode();
+        result = 31 * result + city.hashCode();
+
+
+        return result;
+    }
+
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj){
+            return true;
+        }
+        if(obj == null || getClass() != obj.getClass()){
+            return false;
+        }
+        Address a = (Address) obj;
+        return firstLine.equals(a.firstLine) && secondLine.equals(a.secondLine) && postCode.equals(a.postCode) && city.equals(a.city)  ;
+
+
+
+    }
 }
