@@ -20,16 +20,8 @@ import java.math.BigDecimal;
 public class CalculatorApp {
 
 
+    
     public static void main(String[]args){
-        ApplicationContext ctx = new AnnotationConfigApplicationContext("bootcamp");
-        BeanFactory beanFactory = ctx.getAutowireCapableBeanFactory();
-        Calculator calc = beanFactory.getBean(Calculator.class);
-        BigDecimal x = new BigDecimal(4);
-        BigDecimal y = new BigDecimal(3);
-        Params param = new Params(x,y,"+");
-        Result r = calc.calculate(param);
-        System.out.println("The result is : " + r.getStatus() + ": " + r.getStatusMessage() + ":" + r.getValue().orElse(null));
-
 
 
 
